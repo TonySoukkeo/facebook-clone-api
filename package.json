@@ -9,7 +9,8 @@
     "start:dev": "nodemon server.js"
   },
   "engines": {
-    "node": "11.6.0"
+    "node": "11.6.0",
+    "npm": "6.5.0"
   },
   "author": "Tony Soukkeo",
   "license": "MIT",
