@@ -87,7 +87,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("*", cors());
+const corsOptions = {
+  origin: "http://localhost:3000"
+};
+
+app.use("*", cors(corsOptions));
 
 // Authentification check
 app.use(isAuth);
