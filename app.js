@@ -8,6 +8,7 @@ const GridFSStorage = require("multer-gridfs-storage");
 const bodyParser = require("body-parser");
 const isAuth = require("./util/is-auth/isAuth");
 const compression = require("compression");
+const cors = require("cors");
 
 // Setup dotenv
 dotenv.config();
@@ -85,6 +86,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use("*", cors());
 
 // Authentification check
 app.use(isAuth);
