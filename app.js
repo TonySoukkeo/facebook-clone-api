@@ -62,7 +62,6 @@ const authRoutes = require("./routes/auth"),
 const app = express();
 
 app.use(compression());
-app.use(express.static(__dirname + "/public"));
 
 // Parse incoming requests
 app.use(bodyParser.json());
