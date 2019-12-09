@@ -23,8 +23,7 @@ const userSchema = new Schema(
       imageUrl: {
         type: String,
         required: true,
-        default:
-          "http://localhost:8080/2019-11-18T06:45:32.876Z-placeholder-profile-image.jpeg"
+        default: `${process.env.API_URI}/2019-11-18T06:45:32.876Z-placeholder-profile-image.jpeg`
       },
       imageId: {
         type: Schema.Types.ObjectId,
@@ -36,7 +35,7 @@ const userSchema = new Schema(
       imageUrl: {
         type: String,
         required: true,
-        default: "http://localhost:8080/2019-11-17T22:01:19.998Z-banner.png"
+        default: `${process.env.API_URI}/2019-11-17T22:01:19.998Z-banner.png`
       },
       imageId: {
         type: Schema.Types.ObjectId,

@@ -125,7 +125,7 @@ module.exports.postComment = async (req, res, next) => {
     let imageUrl;
 
     if (image) {
-      imageUrl = `http://localhost:8080/${image.filename}`;
+      imageUrl = `https://facebook-clone--server.herokuapp.com/${image.filename}`;
     }
 
     // Create comment object
@@ -623,7 +623,7 @@ module.exports.postAddReply = async (req, res, next) => {
     let imageUrl;
 
     if (image) {
-      imageUrl = `http://localhost:8080/${image.filename}`;
+      imageUrl = `${process.env.API_URI}/${image.filename}`;
     }
 
     // Create reply object with it's contents

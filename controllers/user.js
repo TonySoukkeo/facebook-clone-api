@@ -43,7 +43,7 @@ module.exports.postCreatePost = async (req, res, next) => {
     // Check if there is an image selected
     let imageUrl;
     if (image) {
-      imageUrl = `http://localhost:8080/${image.filename}`;
+      imageUrl = `${process.env.API_URI}/${image.filename}`;
     }
 
     // Create new post object

@@ -146,7 +146,7 @@ module.exports.postPasswordReset = async (req, res, next) => {
       subject: "Password reset",
       html: `
         <h3>You have requested a password reset</h3>
-        <p>Follow this <a href="http://localhost:3000/password-reset/${resetToken}">link</a> here to reset your password</p>
+        <p>Follow this <a href="${process.env.API_URI}/password-reset/${resetToken}">link</a> here to reset your password</p>
         <p>Password reset link is only valid for an hour</p>
       `
     });

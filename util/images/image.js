@@ -17,12 +17,12 @@ module.exports = {
     // Check to make sure that filename isn't equal to the default filename set
     if (
       filename ===
-      "http://localhost:8080/2019-11-18T06:45:32.876Z-placeholder-profile-image.jpeg"
+      `${process.env.API_URI}/2019-11-18T06:45:32.876Z-placeholder-profile-image.jpeg`
     )
       return;
 
     if (
-      filename === "http://localhost:8080/2019-11-17T22:01:19.998Z-banner.png"
+      filename === `${process.env.API_URI}/2019-11-17T22:01:19.998Z-banner.png`
     )
       return;
 
@@ -36,7 +36,7 @@ module.exports = {
         }
       );
     } else {
-      const name = filename.split("http://localhost:8080/")[1];
+      const name = filename.split(`${process.env.API_URI}/`)[1];
 
       gfs.remove({ filename: name, root: "uploads" }, (err, gridStore) => {
         if (err) return console.log(err);

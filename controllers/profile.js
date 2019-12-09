@@ -150,13 +150,13 @@ module.exports.changeImage = async (req, res, next) => {
 
     switch (type) {
       case "profile":
-        user.profileImage.imageUrl = `http://localhost:8080/${filename}`;
+        user.profileImage.imageUrl = `${process.env.API_URI}/${filename}`;
         user.profileImage.imageId = fileId;
         await removeImage(imageUrl, imageId);
         break;
 
       case "banner":
-        user.bannerImage.imageUrl = `http://localhost:8080/${filename}`;
+        user.bannerImage.imageUrl = `${process.env.API_URI}/${filename}`;
         user.bannerImage.imageId = fileId;
         await removeImage(imageUrl, imageId);
         break;
