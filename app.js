@@ -79,6 +79,10 @@ app.use((req, res, next) => {
     "OPTIONS, GET, POST, PUT, PATCH, DELETE"
   );
 
+  if (req.Method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
   next();
 });
 
