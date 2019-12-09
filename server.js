@@ -7,6 +7,7 @@ const error = require("./util/error-handling/error-handler");
 const GridFSStorage = require("multer-gridfs-storage");
 const bodyParser = require("body-parser");
 const isAuth = require("./util/is-auth/isAuth");
+const compression = require("compression");
 
 // Setup dotenv
 dotenv.config();
@@ -59,6 +60,8 @@ const authRoutes = require("./routes/auth"),
   profileRoutes = require("./routes/profile");
 
 const app = express();
+
+app.use(compression());
 
 // Parse incoming requests
 app.use(bodyParser.json());
