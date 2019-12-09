@@ -8,7 +8,6 @@ const GridFSStorage = require("multer-gridfs-storage");
 const bodyParser = require("body-parser");
 const isAuth = require("./util/is-auth/isAuth");
 const compression = require("compression");
-const cors = require("cors");
 
 // Setup dotenv
 dotenv.config();
@@ -73,7 +72,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, Access-Control-Allow-Headers, X-Requested-With"
+    "Content-Type, Authorization, , X-Requested-With, Origin, Accept"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -86,12 +85,6 @@ app.use((req, res, next) => {
 
   next();
 });
-
-const corsOptions = {
-  origin: "http://localhost:3000"
-};
-
-app.use("*", cors(corsOptions));
 
 // Authentification check
 app.use(isAuth);
