@@ -32,6 +32,6 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^1.19.4",
     "p-iteration": "^1.1.8",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
